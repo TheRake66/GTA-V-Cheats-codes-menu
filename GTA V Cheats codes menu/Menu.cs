@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Security.Policy;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
@@ -33,6 +34,48 @@ namespace GTA_V_Cheats_codes_menu
         {
             this.Hide();
             this.Opacity = 0.85;
+        }
+
+        private void tutorielToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Bienvenue dans le menu des codes de triches de GTA V !" +
+                Environment.NewLine +
+                Environment.NewLine +
+                "Tout d'abord, lancez le jeu en mode histoire." +
+                Environment.NewLine +
+                Environment.NewLine +
+                "Puis, allez dans les paramètres, dans l'onglet « graphisme », et changez le mode d'affichage par « Fenêtre sans bordures »." +
+                Environment.NewLine +
+                Environment.NewLine +
+                "Après avoir enregistré les paramètres, ouvrez le menu des codes de triches en appuyant sur la touche « ~ »." +
+                Environment.NewLine +
+                Environment.NewLine +
+                "Il ne vous reste plus qu'à choisir le code que vous voulez utiliser." +
+                Environment.NewLine +
+                Environment.NewLine +
+                "Bon jeu !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void depotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string url = "https://github.com/TheRake66/GTA-V-Cheats-codes-menu";
+                ProcessStartInfo info = new ProcessStartInfo(url)
+                {
+                    UseShellExecute = true
+                };
+                Process.Start(info);
+            }
+            catch
+            {
+            }
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void timerKeyboard_Tick(object sender, EventArgs e)
@@ -235,6 +278,7 @@ namespace GTA_V_Cheats_codes_menu
             IntPtr handle = this.getHandle();
             if (this.isRunning(handle))
             {
+                this.Hide();
                 User32.SetForegroundWindow(handle);
                 Thread.Sleep(1000);
                 SendKeys.SendWait(code);

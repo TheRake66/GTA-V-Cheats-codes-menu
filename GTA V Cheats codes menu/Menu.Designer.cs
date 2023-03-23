@@ -38,6 +38,13 @@
             this.buttonVehicules = new System.Windows.Forms.Button();
             this.buttonDivers = new System.Windows.Forms.Button();
             this.timerKeyboard = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tutorielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.depotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonArmes
@@ -139,6 +146,52 @@
             this.timerKeyboard.Enabled = true;
             this.timerKeyboard.Tick += new System.EventHandler(this.timerKeyboard_Tick);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tutorielToolStripMenuItem,
+            this.depotToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.quitterToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 76);
+            // 
+            // tutorielToolStripMenuItem
+            // 
+            this.tutorielToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tutorielToolStripMenuItem.Image")));
+            this.tutorielToolStripMenuItem.Name = "tutorielToolStripMenuItem";
+            this.tutorielToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.tutorielToolStripMenuItem.Text = "Tutoriel";
+            this.tutorielToolStripMenuItem.Click += new System.EventHandler(this.tutorielToolStripMenuItem_Click);
+            // 
+            // depotToolStripMenuItem
+            // 
+            this.depotToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("depotToolStripMenuItem.Image")));
+            this.depotToolStripMenuItem.Name = "depotToolStripMenuItem";
+            this.depotToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.depotToolStripMenuItem.Text = "Dépôt GitHub";
+            this.depotToolStripMenuItem.Click += new System.EventHandler(this.depotToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quitterToolStripMenuItem.Image")));
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -158,11 +211,12 @@
             this.Opacity = 0D;
             this.Padding = new System.Windows.Forms.Padding(16);
             this.ShowInTaskbar = false;
-            this.Text = "Form1";
+            this.Text = "GTA V Cheats codes menu";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Blue;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.Shown += new System.EventHandler(this.Menu_Shown);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -177,5 +231,11 @@
         private Button buttonVehicules;
         private Button buttonDivers;
         private System.Windows.Forms.Timer timerKeyboard;
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem tutorielToolStripMenuItem;
+        private ToolStripMenuItem depotToolStripMenuItem;
+        private ToolStripMenuItem quitterToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }
